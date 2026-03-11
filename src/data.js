@@ -68,4 +68,4 @@ export const contacts = {
 }
 
 export const formEndpoint =
-  'https://script.google.com/macros/s/AKfycbwramOYzyNrVfXRaHJNMsbO57xrSnpOeYGEWafC3pFA1xNNgImBAL4ZAI1tks5TcL-nrQ/exec'
+    'https://script.google.com/macros/s/AKfycbwramOYzyNrVfXRaHJNMsbO57xrSnpOeYGEWafC3pFA1xNNgImBAL4ZAI1tks5TcL-nrQ/exec'
