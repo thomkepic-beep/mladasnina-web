@@ -16,24 +16,28 @@ export default function JoinForm() {
     setStatus('loading')
     setMessage('Odosielanie prihlášky...')
 
-    try {
-      const response = await fetch(formEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
+ try {
 
-      if (!response.ok) {
-        throw new Error('Nepodarilo sa odoslať formulár.')
-      }
+  const payload = new URLSearchParams()
+  payload.append("meno", formData.meno)
+  payload.append("skola", formData.skola)
+  payload.append("vek", formData.vek)
+  payload.append("sprava", formData.sprava)
 
-      setStatus('success')
-      setMessage('Ďakujeme, tvoja prihláška bola úspešne odoslaná.')
-      setFormData({ meno: '', skola: '', vek: '', sprava: '' })
-    } catch (error) {
-      setStatus('error')
-      setMessage('Pri odosielaní nastal problém. Skús to prosím znova.')
-    }
+  await fetch(formEndpoint, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: payload.toString()
+  })
+
+  setStatus('success')
+  setMessage('Ďakujeme, tvoja prihláška bola úspešne odoslaná.')
+  setFormData({ meno: '', skola: '', vek: '', sprava: '' })
+
+}
   }
 
   return (
