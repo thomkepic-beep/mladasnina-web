@@ -11,34 +11,35 @@ export default function JoinForm() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('loading')
-    setMessage('Odosielanie prihlášky...')
+ const handleSubmit = async (e) => {
+  e.preventDefault()
+  setStatus('loading')
+  setMessage('Odosielanie prihlášky...')
 
- try {
+  try {
+    const payload = new URLSearchParams()
+    payload.append('meno', formData.meno)
+    payload.append('skola', formData.skola)
+    payload.append('vek', formData.vek)
+    payload.append('sprava', formData.sprava)
 
-  const payload = new URLSearchParams()
-  payload.append("meno", formData.meno)
-  payload.append("skola", formData.skola)
-  payload.append("vek", formData.vek)
-  payload.append("sprava", formData.sprava)
+    await fetch(formEndpoint, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: payload.toString()
+    })
 
-  await fetch(formEndpoint, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: payload.toString()
-  })
-
-  setStatus('success')
-  setMessage('Ďakujeme, tvoja prihláška bola úspešne odoslaná.')
-  setFormData({ meno: '', skola: '', vek: '', sprava: '' })
-
-}
+    setStatus('success')
+    setMessage('Ďakujeme, tvoja prihláška bola úspešne odoslaná.')
+    setFormData({ meno: '', skola: '', vek: '', sprava: '' })
+  } catch (error) {
+    setStatus('error')
+    setMessage('Pri odosielaní nastal problém. Skús to prosím znova.')
   }
+}
 
   return (
     <form className="grid gap-4" onSubmit={handleSubmit}>
