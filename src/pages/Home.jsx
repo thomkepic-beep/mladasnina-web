@@ -145,14 +145,50 @@ export default function Home() {
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {members.map((member) => (
-              <Link key={member.slug} to={`/clen/${member.slug}`} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-                <img src={member.photo} alt={member.name} className="mx-auto h-40 w-40 rounded-full object-cover" />
-                <h3 className="mt-4 text-center text-xl font-black text-[#0B1A4A]">{member.name}</h3>
-                <p className="text-center text-sm font-semibold text-[#1E2F6E]">{member.role}</p>
-                <p className="text-center text-sm text-slate-500">{member.school}</p>
-              </Link>
-            ))}
-          </div>
+             <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+  <SectionTitle
+    eyebrow="Členovia"
+    title="Ľudia, ktorí tvoria Mládežnícky parlament Snina"
+    text="Predstavujeme členov parlamentu, ktorí sa aktívne zapájajú do života mesta a pripravujú aktivity pre mladých ľudí."
+  />
+
+  <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {featuredMembers.map((member) => (
+      <Link
+        key={member.slug}
+        to={`/clen/${member.slug}`}
+        className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+      >
+        <div className="flex flex-col items-center text-center">
+          {member.photo ? (
+            <img
+              src={member.photo}
+              alt={member.name}
+              className="h-32 w-32 rounded-full object-cover"
+            />
+          ) : (
+            <div className="flex h-32 w-32 items-center justify-center rounded-full border-4 border-slate-200 bg-white text-2xl font-black text-[#0B1A4A]">
+              {getInitials(member.name)}
+            </div>
+          )}
+
+          <h3 className="mt-4 text-xl font-black text-[#0B1A4A]">{member.name}</h3>
+          <p className="text-sm font-semibold text-[#1E2F6E]">{member.role}</p>
+          <p className="text-sm text-slate-500">{member.school}</p>
+        </div>
+      </Link>
+    ))}
+  </div>
+
+  <div className="mt-8">
+    <Link
+      to="/clenovia"
+      className="inline-flex rounded-2xl bg-[#0B1A4A] px-6 py-3 font-bold text-white transition hover:bg-[#13245B]"
+    >
+      Zobraziť všetkých členov
+    </Link>
+  </div>
+</section>
 
           <div className="mt-8">
             <Link to="/clenovia" className="inline-flex rounded-2xl bg-[#0B1A4A] px-6 py-3 font-bold text-white transition hover:bg-[#13245B]">
