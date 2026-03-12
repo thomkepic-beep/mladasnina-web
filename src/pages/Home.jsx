@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import SectionTitle from '../components/SectionTitle'
 import ContactSection from '../components/ContactSection'
-import { aboutPage, activities, featuredEvents, news, galleryAlbums, members } from '../data'
+import { aboutPage, activities, featuredEvents, news, galleryAlbums, members, featuredMemberSlugs,} from '../data'
 
 export default function Home() {
   return (
