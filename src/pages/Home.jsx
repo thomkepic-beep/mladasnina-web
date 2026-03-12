@@ -144,15 +144,6 @@ export default function Home() {
           />
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {members.map((member) => (
-             <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-  <SectionTitle
-    eyebrow="Členovia"
-    title="Ľudia, ktorí tvoria Mládežnícky parlament Snina"
-    text="Predstavujeme členov parlamentu, ktorí sa aktívne zapájajú do života mesta a pripravujú aktivity pre mladých ľudí."
-  />
-
-  <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {featuredMembers.map((member) => (
       <Link
         key={member.slug}
