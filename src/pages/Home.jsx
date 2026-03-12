@@ -5,6 +5,20 @@ import ContactSection from '../components/ContactSection'
 import { aboutPage, activities, featuredEvents, news, galleryAlbums, members, featuredMemberSlugs,} from '../data'
 
 export default function Home() {
+  {
+
+  const featuredMembers = members.filter((member) =>
+    featuredMemberSlugs.includes(member.slug)
+  )
+
+  function getInitials(name) {
+    return name
+      .split(' ')
+      .map((part) => part[0])
+      .join('')
+      .slice(0, 2)
+      .toUpperCase()
+  }
   return (
     <>
       <header id="domov" className="relative h-[85vh] w-full overflow-hidden text-white">
