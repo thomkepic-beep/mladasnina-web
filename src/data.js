@@ -11,7 +11,7 @@ export const navigation = [
 
 export const aboutPage = {
   intro:
-    'Mládežnícky parlament Snina je platforma mladých ľudí, ktorí sa aktívne zapájajú do života v meste Snina.',
+    'Mládežnícky parlament Snina je formálna skupina mladých ľudí, ktorí sa aktívne zapájajú do života v meste Snina.',
   mainGoal:
     'Hlavným cieľom Mládežníckeho parlamentu Snina je hájiť záujmy a potreby mládeže v meste Snina a navrhovať riešenia na problémy, ktoré ich ovplyvňujú.',
   more:
