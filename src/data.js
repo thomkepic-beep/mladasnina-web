@@ -263,6 +263,15 @@ export const members = [
   },
 ]
 
+export const featuredMemberSlugs = [
+  'sofia-sinorova',
+  'michaela-vassova',
+  'livia-petrikova',
+  'kristina-kovenova',
+  'viola-zgaburova',
+  'timea-gavronova',
+]
+
 export const contacts = {
   instagram: 'https://www.instagram.com/mp_snina/',
   facebook:
