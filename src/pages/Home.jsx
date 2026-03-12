@@ -42,7 +42,7 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <SectionTitle
             eyebrow="Krátke predstavenie"
-            title="Mládežnícky parlament Snina je platforma mladých ľudí, ktorí chcú byť aktívnou súčasťou života v meste."
+            title="Mládežnícky parlament Snina je skupina mladých ľudí, ktorí chcú byť aktívnou súčasťou života v meste Snina."
             text={`${aboutPage.mainGoal} ${aboutPage.more}`}
           />
         </section>
