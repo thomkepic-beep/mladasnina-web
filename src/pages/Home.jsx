@@ -418,6 +418,7 @@ export default function Home() {
             eyebrow="Členovia"
             title="Ľudia, ktorí tvoria Mládežnícky parlament Snina"
             text="Na homepage zobrazujeme výber členov parlamentu, ktorí sa aktívne zapájajú do života mesta."
+            className="text-center"
           />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -425,7 +426,7 @@ export default function Home() {
               <Link
                 key={member.slug}
                 to={`/clen/${member.slug}`}
-                className="group rounded-[28px] border border-white/5 bg-white/10 p-6 backdrop-blur-sm shadow-sm transition hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg"
+                className="group rounded-[28px] border border-white/5 bg-white/10 p-6 backdrop-blur-sm shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg hover:border-[#F1DE8B]/40"
               >
                 <div className="flex flex-col items-center text-center">
                   {member.photo ? (
