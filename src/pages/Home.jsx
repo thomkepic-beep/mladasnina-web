@@ -34,6 +34,39 @@ const galleryPreview = [
   "/hero.jpg",
 ];
 
+const instagramPosts = [
+  {
+    image: "/instagram/ig1.jpg",
+    alt: "Instagram post 1",
+    href: "https://www.instagram.com/mp_snina/",
+  },
+  {
+    image: "/instagram/ig2.jpg",
+    alt: "Instagram post 2",
+    href: "https://www.instagram.com/mp_snina/",
+  },
+  {
+    image: "/instagram/ig3.jpg",
+    alt: "Instagram post 3",
+    href: "https://www.instagram.com/mp_snina/",
+  },
+  {
+    image: "/instagram/ig4.jpg",
+    alt: "Instagram post 4",
+    href: "https://www.instagram.com/mp_snina/",
+  },
+  {
+    image: "/instagram/ig5.jpg",
+    alt: "Instagram post 5",
+    href: "https://www.instagram.com/mp_snina/",
+  },
+  {
+    image: "/instagram/ig6.jpg",
+    alt: "Instagram post 6",
+    href: "https://www.instagram.com/mp_snina/",
+  },
+];
+
 function PeopleIcon() {
   return (
     <svg
@@ -183,7 +216,7 @@ export default function Home() {
                 to="/o-mp-snina"
                 className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-6 py-3 font-bold text-white backdrop-blur-sm transition hover:bg-white/10"
               >
-                Zisti viac o MP
+                Viac o MP
               </Link>
             </div>
 
@@ -217,7 +250,7 @@ export default function Home() {
         </div>
 
         <a
-          href="#about"
+          href="#what-we-do"
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
           aria-label="Prejsť nižšie"
         >
@@ -232,49 +265,8 @@ export default function Home() {
         </a>
       </section>
 
-      {/* O MP */}
-      <section id="about" className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div>
-              <SectionTitle
-                eyebrow="O MP Snina"
-                title="Mladí ľudia, nápady a aktivity pre mesto Snina"
-                text="Hlavným cieľom Mládežníckeho parlamentu Snina je hájiť záujmy a potreby mládeže v meste Snina a navrhovať riešenia na problémy, ktoré ich ovplyvňujú."
-              />
-              <p className="mt-6 text-lg leading-8 text-slate-600">
-                Mládežnícky parlament Snina sa zapája do participácie pri tvorbe
-                strategických dokumentov týkajúcich sa mládeže, organizuje vlastné
-                aktivity a podporuje dobrovoľníctvo pri rôznych aktivitách v meste
-                Snina.
-              </p>
-
-              <div className="mt-8">
-                <Link
-                  to="/o-mp-snina"
-                  className="inline-flex rounded-2xl bg-[#0B1A4A] px-6 py-3 font-bold text-white transition hover:bg-[#13245B]"
-                >
-                  Viac o MP Snina
-                </Link>
-              </div>
-            </div>
-
-            <div className="rounded-[32px] border border-slate-200 bg-[#F8F9FC] p-8 shadow-sm">
-              <h3 className="text-2xl font-black text-[#0B1A4A]">
-                Členstvo v MPS
-              </h3>
-              <p className="mt-4 leading-8 text-slate-600">
-                Členom Mládežníckeho parlamentu Snina sa môže stať fyzická osoba
-                vo veku od 13 do 20 rokov, ktorá má trvalé bydlisko v meste Snina
-                alebo navštevuje školu na území mesta Snina.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ČO ROBÍME */}
-      <section className="bg-[#F3F6FC]">
+      <section id="what-we-do" className="bg-[#F3F6FC]">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
           <SectionTitle
             eyebrow="Čo robíme"
@@ -377,6 +369,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* NOVINKY / INSTAGRAM */}
+      <section className="bg-[#F8F9FC]">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+          <SectionTitle
+            eyebrow="Novinky"
+            title="Sleduj, čo je nové na našom Instagrame"
+            text="Najnovšie momenty, aktivity a dianie z Mládežníckeho parlamentu Snina."
+          />
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {instagramPosts.map((post, index) => (
+              <a
+                key={`${post.image}-${index}`}
+                href={post.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                <img
+                  src={post.image}
+                  alt={post.alt}
+                  className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </a>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <a
+              href="https://www.instagram.com/mp_snina/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl border border-[#0B1A4A] px-6 py-3 font-bold text-[#0B1A4A] transition hover:bg-[#0B1A4A] hover:text-white"
+            >
+              <InstagramIcon />
+              Sleduj nás na Instagrame
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ČLENOVIA */}
       <section className="relative overflow-hidden bg-[#0B1A4A] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(241,222,139,0.10),transparent_25%)]" />
@@ -392,11 +425,11 @@ export default function Home() {
               <Link
                 key={member.slug}
                 to={`/clen/${member.slug}`}
-                className="group rounded-[28px] border border-white/10 bg-white/10 p-6 backdrop-blur-sm shadow-sm transition hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg"
+                className="group rounded-[28px] border border-white/5 bg-white/10 p-6 backdrop-blur-sm shadow-sm transition hover:-translate-y-1 hover:bg-white/15 hover:shadow-lg"
               >
                 <div className="flex flex-col items-center text-center">
                   {member.photo ? (
-                    <div className="overflow-hidden rounded-full ring-4 ring-white/10 transition group-hover:ring-[#F1DE8B]/70">
+                    <div className="overflow-hidden rounded-full ring-2 ring-white/10 transition group-hover:ring-[#F1DE8B]/60">
                       <img
                         src={member.photo}
                         alt={member.name}
@@ -404,7 +437,7 @@ export default function Home() {
                       />
                     </div>
                   ) : (
-                    <div className="flex h-28 w-28 items-center justify-center rounded-full border-4 border-white/10 bg-white/10 text-2xl font-black text-white transition group-hover:border-[#F1DE8B]/70">
+                    <div className="flex h-28 w-28 items-center justify-center rounded-full border-2 border-white/10 bg-white/10 text-2xl font-black text-white transition group-hover:border-[#F1DE8B]/60">
                       {getInitials(member.name)}
                     </div>
                   )}
@@ -428,49 +461,6 @@ export default function Home() {
             >
               Zobraziť všetkých členov
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* PREČO SA ZAPOJIŤ */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <SectionTitle
-            eyebrow="Prečo sa zapojiť"
-            title="Byť súčasťou MP Snina znamená viac než len členstvo"
-            text="Mládežnícky parlament vytvára priestor pre rast, skúsenosti a nové kontakty."
-          />
-
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            <div className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <h3 className="text-2xl font-black text-[#0B1A4A]">
-                Nové skúsenosti
-              </h3>
-              <p className="mt-4 leading-8 text-slate-600">
-                Získaš skúsenosti s organizáciou podujatí, projektov a aktivít pre
-                mladých ľudí.
-              </p>
-            </div>
-
-            <div className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <h3 className="text-2xl font-black text-[#0B1A4A]">
-                Nové priateľstvá a kontakty
-              </h3>
-              <p className="mt-4 leading-8 text-slate-600">
-                Spoznáš mladých ľudí s podobnými záujmami a vytvoríš si nové
-                priateľstvá aj kontakty.
-              </p>
-            </div>
-
-            <div className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-              <h3 className="text-2xl font-black text-[#0B1A4A]">
-                Možnosť meniť mesto
-              </h3>
-              <p className="mt-4 leading-8 text-slate-600">
-                Môžeš prinášať nápady a byť súčasťou aktivít, ktoré zlepšujú život
-                mladých ľudí v Snine.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -510,91 +500,84 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CTA */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <div className="relative overflow-hidden rounded-[36px] bg-[#0B1A4A] px-8 py-14 text-center text-white shadow-xl lg:px-14">
+          <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-[#F1DE8B]/10 blur-3xl" />
+          <div className="absolute bottom-0 right-0 h-52 w-52 rounded-full bg-white/10 blur-3xl" />
+
+          <div className="relative">
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#F1DE8B]">
+              Pridaj sa k nám
+            </p>
+            <h2 className="mt-4 text-3xl font-black sm:text-4xl">
+              Staň sa súčasťou Mládežníckeho parlamentu Snina
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-200">
+              Ak máš nápady a chceš byť aktívny v meste Snina, pridaj sa k nám a
+              vyplň prihlášku.
+            </p>
+
+            <div className="mt-8">
+              <Link
+                to="/pridaj-sa"
+                className="inline-flex rounded-2xl bg-[#F1DE8B] px-6 py-3 font-bold text-[#0B1A4A] shadow-lg shadow-[#F1DE8B]/20 transition hover:-translate-y-0.5 hover:opacity-95"
+              >
+                Vyplniť prihlášku
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* KONTAKT */}
       <section className="relative overflow-hidden bg-[#101B52] text-white">
         <div className="absolute left-[-60px] top-0 h-64 w-64 rounded-full bg-[#F1DE8B]/10 blur-3xl" />
         <div className="absolute bottom-[-80px] right-0 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div>
+        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#F1DE8B]">
                 Kontakt
               </p>
               <h2 className="mt-4 text-4xl font-black sm:text-5xl">
                 Spoj sa s nami
               </h2>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-200">
-                Máš otázku, nápad na spoluprácu alebo sa chceš pridať? Sleduj naše
-                sociálne siete alebo prejdi na kontaktnú stránku.
+              <p className="mt-6 text-lg leading-8 text-slate-200">
+                Sleduj naše sociálne siete alebo nám napíš na e-mail.
               </p>
-
-              <div className="mt-8 flex gap-4">
-                <a
-                  href="https://www.instagram.com/mp_snina/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-white transition hover:bg-white/20"
-                  aria-label="Instagram"
-                >
-                  <InstagramIcon />
-                </a>
-
-                <a
-                  href="https://www.facebook.com/p/Ml%C3%A1de%C5%BEn%C3%ADcky-parlament-Snina-100092895751320/?locale=sk_SK"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-white transition hover:bg-white/20"
-                  aria-label="Facebook"
-                >
-                  <FacebookIcon />
-                </a>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                <div className="rounded-2xl bg-white/10 px-5 py-4 text-slate-100 backdrop-blur-sm">
-                  parlament.snina@gmail.com
-                </div>
-                <div className="inline-flex rounded-2xl bg-white/10 px-5 py-4 text-slate-100 backdrop-blur-sm">
-                  Hashtag: #mladáSnina
-                </div>
-              </div>
             </div>
 
-            <div className="rounded-[32px] border border-white/10 bg-white/10 p-8 backdrop-blur-sm shadow-xl">
-              <h3 className="text-2xl font-black text-white">
-                Kontakt a sociálne siete
-              </h3>
-              <p className="mt-4 leading-8 text-slate-200">
-                Pre podrobné kontaktné informácie, formulár a ďalšie možnosti
-                spojenia navštív našu kontaktnú stránku.
-              </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="https://www.instagram.com/mp_snina/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 rounded-2xl bg-white/10 px-5 py-3 text-white transition hover:bg-white/20"
+                aria-label="Instagram"
+              >
+                <InstagramIcon />
+                <span className="font-semibold">Instagram</span>
+              </a>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link
-                  to="/kontakt"
-                  className="inline-flex rounded-2xl bg-[#F1DE8B] px-6 py-3 font-bold text-[#0B1A4A] transition hover:opacity-90"
-                >
-                  Prejsť na kontakt
-                </Link>
+              <a
+                href="https://www.facebook.com/p/Ml%C3%A1de%C5%BEn%C3%ADcky-parlament-Snina-100092895751320/?locale=sk_SK"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 rounded-2xl bg-white/10 px-5 py-3 text-white transition hover:bg-white/20"
+                aria-label="Facebook"
+              >
+                <FacebookIcon />
+                <span className="font-semibold">Facebook</span>
+              </a>
 
-                <a
-                  href="https://www.instagram.com/mp_snina/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex rounded-2xl border border-white/20 px-6 py-3 font-bold text-white transition hover:bg-white/10"
-                >
-                  Instagram
-                </a>
+              <div className="inline-flex items-center rounded-2xl bg-white/10 px-5 py-3 text-white">
+                <span className="font-semibold">parlament.snina@gmail.com</span>
+              </div>
 
-                <a
-                  href="https://www.facebook.com/p/Ml%C3%A1de%C5%BEn%C3%ADcky-parlament-Snina-100092895751320/?locale=sk_SK"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex rounded-2xl border border-white/20 px-6 py-3 font-bold text-white transition hover:bg-white/10"
-                >
-                  Facebook
-                </a>
+              <div className="inline-flex items-center rounded-2xl bg-white/10 px-5 py-3 text-white">
+                <span className="font-semibold">#mladáSnina</span>
               </div>
             </div>
           </div>
