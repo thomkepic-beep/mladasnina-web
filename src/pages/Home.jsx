@@ -47,70 +47,65 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-[#0B1A4A] text-white">
-        <img
-          src="/hero.jpg"
-          alt="Mládežnícky parlament Snina"
-          className="absolute inset-0 h-full w-full object-cover opacity-50"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#081336]/70 via-[#0B1A4A]/55 to-[#13245B]/55" />
+     <section className="relative isolate overflow-hidden bg-[#0B1A4A] text-white">
+  <img
+    src="/hero.jpg"
+    alt="Mládežnícky parlament Snina"
+    className="absolute inset-0 h-full w-full object-cover opacity-45"
+  />
+  <div className="absolute inset-0 bg-[#0B1A4A]/55" />
 
-        <div className="absolute left-[-80px] top-10 h-72 w-72 rounded-full bg-[#F1DE8B]/10 blur-3xl" />
-        <div className="absolute bottom-[-60px] right-[-40px] h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+  <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+    <div className="max-w-3xl">
+      <p className="mb-4 text-sm font-bold uppercase tracking-[0.25em] text-[#F1DE8B]">
+        Mládežnícky parlament Snina
+      </p>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="max-w-3xl">
-              <p className="mb-4 text-sm font-bold uppercase tracking-[0.25em] text-[#F1DE8B]">
-                Mládežnícky parlament Snina
-              </p>
+      <h1 className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
+        Priestor pre mladých ľudí, ktorí chcú byť aktívni a meniť svoje mesto.
+      </h1>
 
-              <h1 className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
-                Priestor pre mladých ľudí, ktorí chcú byť aktívni a meniť svoje
-                mesto.
-              </h1>
+      <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
+        Spájame mladých ľudí zo základných a stredných škôl, organizujeme
+        podujatia, podporujeme dobrovoľníctvo a vytvárame priestor pre nové
+        nápady v meste Snina.
+      </p>
 
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-                Spájame mladých ľudí zo základných a stredných škôl, organizujeme
-                podujatia, podporujeme dobrovoľníctvo a vytvárame priestor pre
-                nové nápady v meste Snina.
-              </p>
+      <div className="mt-10 flex flex-wrap gap-4">
+        <Link
+          to="/pridaj-sa"
+          className="inline-flex rounded-2xl bg-[#F1DE8B] px-6 py-3 font-bold text-[#0B1A4A] transition hover:opacity-90"
+        >
+          Pridaj sa k nám
+        </Link>
 
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link
-                  to="/pridaj-sa"
-                  className="inline-flex items-center justify-center rounded-2xl bg-[#F1DE8B] px-6 py-3 font-bold text-[#0B1A4A] shadow-lg shadow-[#F1DE8B]/20 transition hover:-translate-y-0.5 hover:opacity-95"
-                >
-                  Pridaj sa k nám
-                </Link>
+        <Link
+          to="/o-mp-snina"
+          className="inline-flex rounded-2xl border border-white/30 px-6 py-3 font-bold text-white transition hover:bg-white/10"
+        >
+          Zisti viac o MP
+        </Link>
+      </div>
 
-                <Link
-                  to="/o-mp-snina"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/5 px-6 py-3 font-bold text-white backdrop-blur-sm transition hover:bg-white/10"
-                >
-                  Zisti viac o MP
-                </Link>
-              </div>
+      <div className="mt-12 grid max-w-2xl gap-4 sm:grid-cols-3">
+        <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-5 backdrop-blur-sm">
+          <div className="text-2xl font-black text-[#F1DE8B]">15</div>
+          <div className="mt-1 text-sm text-slate-200">členov parlamentu</div>
+        </div>
 
-              <div className="mt-12 grid max-w-2xl gap-4 sm:grid-cols-3">
-                <div className="rounded-3xl border border-white/15 bg-white/10 px-5 py-5 backdrop-blur-md shadow-lg shadow-black/10">
-                  <div className="text-2xl font-black text-[#F1DE8B]">15</div>
-                  <div className="mt-1 text-sm text-slate-200">
-                    členov parlamentu
-                  </div>
-                </div>
-                <div className="rounded-3xl border border-white/15 bg-white/10 px-5 py-5 backdrop-blur-md shadow-lg shadow-black/10">
-                  <div className="text-2xl font-black text-[#F1DE8B]">13–20</div>
-                  <div className="mt-1 text-sm text-slate-200">rokov členstva</div>
-                </div>
-                <div className="rounded-3xl border border-white/15 bg-white/10 px-5 py-5 backdrop-blur-md shadow-lg shadow-black/10">
-                  <div className="text-2xl font-black text-[#F1DE8B]">Snina</div>
-                  <div className="mt-1 text-sm text-slate-200">
-                    mladí pre svoje mesto
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-5 backdrop-blur-sm">
+          <div className="text-2xl font-black text-[#F1DE8B]">13–20</div>
+          <div className="mt-1 text-sm text-slate-200">rokov členstva</div>
+        </div>
+
+        <div className="rounded-2xl border border-white/10 bg-white/10 px-5 py-5 backdrop-blur-sm">
+          <div className="text-2xl font-black text-[#F1DE8B]">Snina</div>
+          <div className="mt-1 text-sm text-slate-200">mladí pre svoje mesto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
             <div className="hidden lg:block">
               <div className="rounded-[32px] border border-white/15 bg-white/10 p-8 backdrop-blur-md shadow-2xl shadow-black/20">
