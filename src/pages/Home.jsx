@@ -418,7 +418,7 @@ export default function Home() {
             eyebrow="Členovia"
             title="Ľudia, ktorí tvoria Mládežnícky parlament Snina"
             text="Na homepage zobrazujeme výber členov parlamentu, ktorí sa aktívne zapájajú do života mesta."
-            className="text-center"
+            className="text-center text-white [&>p]:text-slate-300"
           />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
