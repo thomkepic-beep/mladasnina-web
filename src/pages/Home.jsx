@@ -419,15 +419,11 @@ export default function Home() {
     Členovia
   </p>
 
-  <h2 className="mt-4 text-4xl font-black text-white sm:text-5xl">
+ <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
     Ľudia, ktorí tvoria Mládežnícky parlament Snina
   </h2>
-
-  <p className="mt-6 text-lg leading-8 text-slate-300">
-    Na homepage zobrazujeme výber členov parlamentu, ktorí sa aktívne zapájajú do života mesta.
-  </p>
 </div>
-          />
+         
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featuredMembers.map((member) => (
