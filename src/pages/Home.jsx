@@ -414,11 +414,19 @@ export default function Home() {
       <section className="relative overflow-hidden bg-[#0B1A4A] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(241,222,139,0.10),transparent_25%)]" />
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-          <SectionTitle
-            eyebrow="Členovia"
-            title="Ľudia, ktorí tvoria Mládežnícky parlament Snina"
-            text="Na homepage zobrazujeme výber členov parlamentu, ktorí sa aktívne zapájajú do života mesta."
-            className="text-center text-white [&>p]:text-slate-300"
+          <div className="mx-auto max-w-3xl text-center">
+  <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#F1DE8B]">
+    Členovia
+  </p>
+
+  <h2 className="mt-4 text-4xl font-black text-white sm:text-5xl">
+    Ľudia, ktorí tvoria Mládežnícky parlament Snina
+  </h2>
+
+  <p className="mt-6 text-lg leading-8 text-slate-300">
+    Na homepage zobrazujeme výber členov parlamentu, ktorí sa aktívne zapájajú do života mesta.
+  </p>
+</div>
           />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
